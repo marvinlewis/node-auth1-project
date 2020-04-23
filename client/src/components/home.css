@@ -1,0 +1,28 @@
+.picBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.loginBox {
+    display: flex;
+    justify-content: space-evenly;
+    margin : 20px;
+    background-color: bisque;
+    height: 20vh;
+    align-items: center;
+    font-size: 21px;
+    text-decoration: none;
+    color : black
+}
+
+img {
+    width : 42%;
+    height : 50vh;
+    margin: 10px;
+}
+
+link {
+    text-decoration: none;
+}
