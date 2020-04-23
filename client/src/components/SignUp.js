@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -52,14 +52,15 @@ export default function SignUp() {
     const history = useHistory()
 
     const [ data, setData ] = useState({
-        username : "",
-        password : ''
+        name : "",
+        password : '',
+        fname : ''
     });
 
     const handleChange = e => {
         console.log(e.target.value)
         setData({ 
-            ... data,
+            ...data,
             [e.target.name] : e.target.value 
         })
     }
@@ -70,7 +71,7 @@ export default function SignUp() {
         axios.post('http://localhost:5000/api/register', data)
         .then(res => {
             console.log('submited good', res)
-            history.push('/users')
+            history.push('/')
         })
         .catch(err => console.log(err))
     }
@@ -91,12 +92,13 @@ export default function SignUp() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={handleChange}
                 autoComplete="fname"
-                name="firstName"
+                name="fname"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
+                id="fname"
                 label="First Name"
                 autoFocus
               />
@@ -117,10 +119,11 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
+                name="name"
+                label="username"
+                type='text'
                 id="username"
-                label="Username"
-                name="username"
-                autoComplete="username"
+                autoComplete="current-username"
               />
             </Grid>
             <Grid item xs={12}>

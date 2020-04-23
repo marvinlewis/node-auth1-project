@@ -60,7 +60,7 @@ export default function SignIn() {
 const handleChange = e => {
     console.log(e.target.value)
     setData({ 
-        ... data,
+        ...data,
         [e.target.name] : e.target.value 
     })
 }
@@ -71,7 +71,7 @@ const handleSubmit = e => {
     axios.post('http://localhost:5000/api/login', data)
     .then(res => {
         console.log('Logged in fine', res)
-        history.push('/users')
+        history.push('/')
     })
     .catch(err => console.log(err))
 }

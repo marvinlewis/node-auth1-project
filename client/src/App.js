@@ -20,6 +20,9 @@ function App() {
         <NavLink to='/signup'>
           Sign Up
         </NavLink>
+        <NavLink to='/users'>
+          Users
+        </NavLink>
       </div>
       <Route exact path='/' component={Home}/>
       <Route  path='/login'>

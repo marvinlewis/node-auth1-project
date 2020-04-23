@@ -8,11 +8,9 @@ router.post('/', (req, res) => {
 
     Users.findBy({ username })
     .then(item => {
-        req.session.loggedIn = true;
-        req.session.username = username;
-        req.session.password = password;
         console.log(item)
         if(item && bcrypt.compareSync(password, item[0].Password)) {
+            req.session.loggedIn = true;
             res.status(200).json({message : 'Welcome', })
     } else { 
         res.status(401).json({
