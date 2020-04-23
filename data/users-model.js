@@ -13,7 +13,6 @@ function get() {
 
 function add (user) {
     return db('users').insert(user)
-    //const added = { message : "added"}
 };
 
 function findBy (filter) {

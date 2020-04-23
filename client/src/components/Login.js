@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLocalStorage } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -71,7 +71,8 @@ const handleSubmit = e => {
     axios.post('http://localhost:5000/api/login', data)
     .then(res => {
         console.log('Logged in fine', res)
-        history.push('/')
+
+        history.push('/dashboard')
     })
     .catch(err => console.log(err))
 }

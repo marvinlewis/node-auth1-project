@@ -52,9 +52,10 @@ export default function SignUp() {
     const history = useHistory()
 
     const [ data, setData ] = useState({
-        name : "",
+        username : "",
         password : '',
-        fname : ''
+        first_name : '',
+        last_night : ''
     });
 
     const handleChange = e => {
@@ -71,7 +72,7 @@ export default function SignUp() {
         axios.post('http://localhost:5000/api/register', data)
         .then(res => {
             console.log('submited good', res)
-            history.push('/')
+            history.push('/login')
         })
         .catch(err => console.log(err))
     }
@@ -94,7 +95,7 @@ export default function SignUp() {
               <TextField
                 onChange={handleChange}
                 autoComplete="fname"
-                name="fname"
+                name="first_name"
                 variant="outlined"
                 required
                 fullWidth
@@ -105,25 +106,27 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={handleChange}
                 variant="outlined"
                 required
                 fullWidth
                 id="lastName"
                 label="Last Name"
-                name="lastName"
+                name="last_night"
                 autoComplete="lname"
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={handleChange}
                 variant="outlined"
                 required
                 fullWidth
-                name="name"
+                name="username"
                 label="username"
                 type='text'
                 id="username"
-                autoComplete="current-username"
+                autoComplete="username"
               />
             </Grid>
             <Grid item xs={12}>

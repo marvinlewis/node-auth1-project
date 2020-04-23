@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Signup from './components/SignUp';
 import Home from './components/Home';
 import Users from './components/Users';
+import Dashboard from './components/Dashboard';
 import { Route, NavLink } from 'react-router-dom';
 import './App.css';
 
@@ -11,17 +12,11 @@ function App() {
   return (
     <div className="App">
       <div className='nav'>
-        <NavLink to='/'>
-          Home
-        </NavLink>
         <NavLink to='/login'>
           Log In
         </NavLink>
         <NavLink to='/signup'>
           Sign Up
-        </NavLink>
-        <NavLink to='/users'>
-          Users
         </NavLink>
       </div>
       <Route exact path='/' component={Home}/>
@@ -33,6 +28,9 @@ function App() {
       </Route>
       <Route path='/users'>
         <Users/>
+      </Route>
+      <Route path='/dashboard'>
+        <Dashboard/>
       </Route>
     </div>
   );
