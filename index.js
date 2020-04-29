@@ -1,3 +1,5 @@
 const server = require('./server');
 
-server.listen(5000, () => console.log('==!! SERVER WORKING !!=='))
+const port = process.env.PORT || 5000
+
+server.listen(port, () => console.log('==!! SERVER WORKING !!=='))
